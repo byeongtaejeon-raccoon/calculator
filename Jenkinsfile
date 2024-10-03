@@ -29,7 +29,7 @@ pipeline {
                     passwd = "dhrcjs1871"
                 }
                 sh "echo $passwd | docker login -u $user --password-stdin $url"
-                sh "docker push btjeon/calculator:latest"
+                sh "docker push btjeon/calculator"
             }
         }
     }
