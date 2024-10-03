@@ -28,7 +28,7 @@ pipeline {
                     user = "btjeon"
                     passwd = "dhrcjs1871"
                 }
-//                sh "echo $passwd | docker login -u $user --password-stdin $url"
+                sh "echo $passwd | docker login -u $user --password-stdin $url"
                 sh "docker push btjeon/calculator"
             }
         }
