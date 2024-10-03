@@ -23,6 +23,8 @@ pipeline {
         }
         stage("Docker push") {
             steps {
+                def registry_url = "registry.hub.docker.com/"
+                sh "docker login ${registry_url}"
                 sh "docker push btjeon/calculator"
             }
         }
