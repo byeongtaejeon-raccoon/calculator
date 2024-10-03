@@ -24,9 +24,9 @@ pipeline {
         stage("Docker push") {
             steps {
                 script {
-                    url = registry.hub.docker.com/
-                    user = btjeon
-                    passwd = 1871
+                    url = "registry.hub.docker.com/"
+                    user = "btjeon"
+                    passwd = "1871"
                 }
                 sh "docker login -u $user --password-stdin $passwd $url"
                 sh "docker push btjeon/calculator"
