@@ -18,7 +18,7 @@ pipeline {
         }
         stage("Docker build") {
             steps {
-                sh "docker build -t calculator ."
+                sh "docker build -t btjeon/calculator ."
             }
         }
     }
