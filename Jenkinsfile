@@ -26,9 +26,9 @@ pipeline {
                 script {
                     url = "registry.hub.docker.com/"
                     user = "btjeon"
-                    passwd = "1871"
+                    passwd = "dhrcjs1871"
                 }
-                sh "docker login -u $user --password-stdin $passwd $url"
+                sh "echo $passwd" | docker login -u $user --password-stdin $url"
                 sh "docker push btjeon/calculator"
             }
         }
