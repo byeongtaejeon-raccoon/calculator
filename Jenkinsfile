@@ -27,9 +27,8 @@ pipeline {
                     url = "registry.hub.docker.com/"
                     user = "btjeon"
 //                    passwd = "dhrcjs1871"
-                    passwd = "dckr_pat_3lcy8ghqNEhsfSzQ0_9VYsBDwp0"
                 }
-                sh "echo $passwd | docker login -u $user --password-stdin $url"
+                sh "cat /home/btjeon/chapter5/calculator/passwd.txt | docker login -u $user --password-stdin $url"
                 sh "docker push btjeon/calculator"
             }
         }
