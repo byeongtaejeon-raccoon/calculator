@@ -26,7 +26,6 @@ pipeline {
                 script {
                     url = "registry.hub.docker.com/"
                     user = "btjeon"
-//                    passwd = "dhrcjs1871"
                     passwd = "dckr_pat_3lcy8ghqNEhsfSzQ0_9VYsBDwp0"
                 }
                 sh "echo $passwd | docker login -u $user --password-stdin $url"
@@ -41,7 +40,8 @@ pipeline {
         stage("Acceptance test") { 
             steps { 
                 sleep 60 
-                sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+//                sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+                sh "./gradlew acceptanceTest -Dcalculator.url=http://localhost:8765"
             } 
        }
     }
